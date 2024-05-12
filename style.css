@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(20, 110, 146);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    color: rgb(46, 161, 190);
+    text-align: center;
+    font-style: italic;
+}
+
+
+#title {
+    color: aliceblue;
+    font-style: normal;
+}
+
+.card {
+    margin-bottom: 2rem;
+    background-color: aliceblue;
+    padding: 1rem;
+
+    display: flex;
+    border-radius: 1rem;
+}
+
+.pic {
+    text-align: center;
+    margin: auto 0;
+    width: 25%;
+}
+
+.desc {
+    width: 70%;
+}
+
+.pic img {
+    width: 90%;
+}

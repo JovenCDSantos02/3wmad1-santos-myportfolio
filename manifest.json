@@ -1,0 +1,16 @@
+{
+  "name": "My Portfolio",
+  "short_name": "Portfolio",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#146e92",
+  "background_color": "#ffffff"
+}

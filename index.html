@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#146e92">
+</head>
+<body>
+    <div>
+        <h1 id="title">MyPortfolio</h1>
+    </div>
+    <div class="content">
+        <div class="card">
+            <div class="desc">
+            </div>
+            <div class="pic"><img src="img/profile.jpg" alt="Photo of Joven Christian D. Santos"></div>
+        </div>
+        <div class="card">
+            <div class="pic"><img src="img/book.jpg" alt="A book"></div>
+            <div class="desc">
+            </div>
+        </div>
+        <div class="card">
+            <div class="desc">
+            </div>
+            <div class="pic">
+                <img src="img/arcane.jpg" alt="Cinema Poster of Arcane">
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="img/python.png" alt="Python Logo">
+            </div>
+            <div class="desc">
+            </div>
+        </div>
+        <div class="card">
+            <div class="desc">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('content.json')
+        .then(response => response.json())
+        .then(contents => {
+            const desc = document.querySelectorAll(".desc");
+            let descNum = 0;
+            for (let x in contents) {
+                if (descNum === desc.length){
+                    break;
+                }
+                else{
+                    desc[descNum].innerHTML = contents[x].content;
+                    descNum++;
+                }
+            }
+        })
+        .catch(error => console.error('Error fetching content:', error));
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }, function(err) {
+                console.log('Service Worker registration failed:', err);
+            });
+            });
+        }
+    </script>
+</body>
+</html>
